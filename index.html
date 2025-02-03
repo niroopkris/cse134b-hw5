@@ -23,10 +23,21 @@
 <body>
     <header>
         <div id = "navigation">
+            <nav>
             <!--Navigation Bar-->
-            <ul>
-                <li><a href="#">Home</a></li>
-            </ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work/Research</a>
+                <a href="extracirriculars.html">Extracirriculars</a>
+                <a href="contact.html">Contact</a>
+                <a href="experiments.html">Experiments</a>
+                <search>
+                    <form action="./search/">
+                        <input type="search">
+                        <button type="submit">Search</button>
+                    </form>
+                </search>
+            </nav>
         </div>
     </header>
     <!--Home Page-->
@@ -36,12 +47,17 @@
         <li></li>
     </ol>
 
-    <!--Education (about page)-->
-    <h1>Education</h1>
+    <!--about.html-->
+    <h1>About Me</h1>
+    <h2>Education</h2>
+    <p><em>UC San Diego: </em> Bachelors in Computer Science (Expected Graduation: 2027)<p> 
+    <img src="images/ucsd.jpg">
 
-    <h2></h2>
-    <h3></h3>
-    <img src="https://">
+    <h2>Hobbies</h2>
+    <ol>
+        <li></li>
+    </ol>
+
 
     <!--work.html-->
     <h1>Work/Research Experience</h1>
@@ -54,27 +70,33 @@
     <h2>Extracirriculars:</h2>
     <h3>Math Matters</h3>
 
-    <!--Not super important, hidden and show with button -->
-    <h2>Hobbies: </h2>
-    <button> Show </button>
-    <template>
-    <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ol>
-    </template>
 
     <!--contact.html-->
     <h1>Contact and Links</h1>
     <h3>Email: niroopkris@gmail.com </h3>
-    <h3>Github: </h3>
-    
-         
-    </ul>
+    <h3>Github:</h3>
+    <a href="github.com/"></a>
+
+    <address>
+        Made by <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>.<br>
+        Located at UC San Diego
+    </address>
 
     <!--experiments.html-->
     <h1>Experiments</h1>
+    <dialog open>
+        <p>Welcome to the experiments page</p>
+        <button id="close">Close</button>
+    </dialog>
+    <!--Hidden. Show on click-->
+    <button> Show </button>
+    <template>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </template>
 
     <label>Did you like this website?</label> 
     <input type="checkbox"/>
