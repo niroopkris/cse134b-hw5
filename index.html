@@ -4,31 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>My Portfolio</title>
-    <link href="images/favicon.ico" rel="icon" />
+    <link href="images/favicon.svg" rel="icon" />
     <style>
         body {
             border-color: black;
             border-style: solid;
         }
     </style>
-    <script>
-        //solely for canvas tag
-        const canvas = document.querySelector("canvas");
-        const context = canvas.getContext("2d");
-        context.fillStyle = "blue";
-        context.fillRect(30,30,100,100)
-    </script>
-
 </head>
 <body>
     <header>
-        <div id = "navigation">
+        <div id = "header nav">
             <nav>
             <!--Navigation Bar-->
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="work.html">Work/Research</a>
-                <a href="extracirriculars.html">Extracirriculars</a>
+                <a href="extracurriculars.html">Extracurriculars</a>
                 <a href="contact.html">Contact</a>
                 <a href="experiments.html">Experiments</a>
                 <search>
@@ -40,67 +32,44 @@
             </nav>
         </div>
     </header>
-    <!--Home Page-->
-    <h1>Niroop's Portfolio</h1>
 
-    <ol>
-        <li></li>
-    </ol>
+    <main>
+        <!--Home Page-->
+        <hgroup>
+            <h1>My Portfolio</h1>
+            <hr>
 
-    <!--about.html-->
-    <h1>About Me</h1>
-    <h2>Education</h2>
-    <p><em>UC San Diego: </em> Bachelors in Computer Science (Expected Graduation: 2027)<p> 
-    <img src="images/ucsd.jpg">
+            <h2>Welcome! I'm Niroop Krishnakumar.</h2>
+            <h3>Student at UC San Diego</h3>
+        </hgroup>
+        
+        <picture>
+            <source media="(min-width:600px)" srcset="images/portrait.JPG">
+            <img src="images/portrait.JPG" alt="portrait">
+        </picture>
 
-    <h2>Hobbies</h2>
-    <ol>
-        <li></li>
-    </ol>
+        <section class="home nav">
+            <nav>
+            <!--Navigation Bar-->
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work/Research</a>
+                <a href="extracurriculars.html">Extracurriculars</a>
+                <a href="contact.html">Contact</a>
+                <a href="experiments.html">Experiments</a>
+            </nav>
+        </section>
+    </main>
 
+    <footer>
+        <hr/>
+        <address>
+            <small>
+                Made by <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>.<br>
+                Located at UC San Diego
+            </small>
+        </address>
+    </footer>
 
-    <!--work.html-->
-    <h1>Work/Research Experience</h1>
-    <h3>Work Experience</h3>
-    <p></p>
-    
-
-    <!--hobbies.html-->
-    <h1>Extracirriculars and Hobbies</h1>
-    <h2>Extracirriculars:</h2>
-    <h3>Math Matters</h3>
-
-
-    <!--contact.html-->
-    <h1>Contact and Links</h1>
-    <h3>Email: niroopkris@gmail.com </h3>
-    <h3>Github:</h3>
-    <a href="github.com/"></a>
-
-    <address>
-        Made by <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>.<br>
-        Located at UC San Diego
-    </address>
-
-    <!--experiments.html-->
-    <h1>Experiments</h1>
-    <dialog open>
-        <p>Welcome to the experiments page</p>
-        <button id="close">Close</button>
-    </dialog>
-    <!--Hidden. Show on click-->
-    <button> Show </button>
-    <template>
-        <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ol>
-    </template>
-
-    <label>Did you like this website?</label> 
-    <input type="checkbox"/>
-
-    <canvas width="100" height="100"><canvas>
 </body>
 </html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My Portfolio</title>
+    <link href="images/favicon.svg" rel="icon" />
+    <style>
+        body {
+            border-color: black;
+            border-style: solid;
+        }
+    </style>
+    <script>
+        //solely for canvas script
+        var c = document.getElementById("theCanvas");
+        var context = c.getContext("2d");
+        context.fillStyle = "blue";
+        context.fillRect(20, 20, 150, 100);
+    </script>
+</head>
+<body>
+    <header>
+        <div id = "header nav">
+            <nav>
+            <!--Navigation Bar-->
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work/Research</a>
+                <a href="extracurriculars.html">Extracurriculars</a>
+                <a href="contact.html">Contact</a>
+                <a href="experiments.html">Experiments</a>
+                <search>
+                    <form action="./search/">
+                        <input type="search">
+                        <button type="submit">Search</button>
+                    </form>
+                </search>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!--experiments.html-->
+
+        <h1><span class="experiment">Experiments</span></h1>
+        <hr>
+        <section>
+            <p>Greetings. This text is on the left</p>
+        </section>
+        <aside>
+            Greetings. This is an aside so this text should be to the right side, but it is not.
+        </aside>
+        <br/>
+
+        <audio controls> <source src="audio/piano.mp3" type="audio/mpeg"> </audio>
+        <br>
+
+        <video width = "300" height = "200" controls>
+            <source src="video/water.mp4" type="video/mp4">
+        </video>
+
+        <dialog open>
+            <p>Welcome to the experiments page. Press <kbd>Enter</kbd> to exit (click ok) </p>
+            <form method="dialog">
+                <button>Ok</button>
+            </form>
+        </dialog>
+
+        <pre>
+        <code>
+        int five = 5;
+        int i = five/0;
+        </code>
+        </pre>
+        <p>The java code above will cause the following error message to be thrown: <samp>java.lang.ArithmeticException: / by zero</samp></p>
+
+        <table>
+            <caption>
+                <i>Days of the Week<i>
+            </caption>
+            <colgroup>
+                <col />
+                <col span="7"/>
+            </colgroup>
+            <tr>
+                <td></td>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+                <th scope="col">Saturday</th>
+                <th scope="col">Sunday</th>
+            </tr>
+            <tr>
+                <th scope="row">Description</th>
+                <td>Bad</td>
+                <td>Okay</td>
+                <td>Okay</td>
+                <td>Okay</td>
+                <td>Nice</td>
+                <td>Amazing</td>
+                <td>Amazing</td>
+            </tr>
+        </table>
+        <br>
+
+        <iframe width="300" height="200" src="https://maps.ucsd.edu/map/default.htm">
+
+        </iframe>
+        <br>
+
+        <!--Hidden. Show on click-->
+        <button> Random Facts (Template) </button>
+        <template>
+            <ol>
+                <li>My thumb is double-jointed</li>
+                <li>Trees cannot talk</li>
+            </ol>
+        </template>
+
+        <br>
+        <br>
+
+        <label>Did you like this website?</label> 
+        <select>
+            <optgroup label="Positive">
+                <option>Yes</option>
+            </optgroup>
+            <optgroup label="Negative">
+                <option>No</option>
+            </optgroup>
+        </select>
+
+        <input list="yes-or-no" id="yeslist" name="yeslist">
+        <datalist id="yes-or-no">
+            <option value="yes"></option>
+            <option value="no"></option>
+        </datalist>
+
+        <br><br>
+
+        <label>Please provide any feedback:</label> 
+        <textarea rows="3" cols="20"></textarea>
+        <br>
+
+        <p>Thank you for reading.</p>
+        <del><p>It was not my pleasure</p></del>
+        <ins><p>It was my pleasure</p></ins>
+
+        <canvas id="theCanvas" width="200" height="100"></canvas>
+        <noscript>Javascript is not supported!</noscript>
+    </main>
+
+    <footer>
+        <hr/>
+        <address>
+            <small>
+                Made by <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>.<br>
+                Located at UC San Diego
+            </small>
+        </address>
+    </footer>
+
+</body>
+</html>
