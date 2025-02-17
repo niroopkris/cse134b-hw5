@@ -2,67 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial scale 1.0">
     <title>My Portfolio</title>
     <link href="images/favicon.svg" rel="icon" />
-    <style>
-        body {
-            border-color: black;
-            border-style: solid;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
     <header>
-        <div id = "header nav">
+        <div id = "header-nav">
             <nav>
             <!--Navigation Bar-->
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
                 <a href="work.html">Work/Research</a>
                 <a href="extracurriculars.html">Extracurriculars</a>
                 <a href="contact.html">Contact</a>
-                <a href="experiments.html">Experiments</a>
-                <search>
-                    <form action="./search/">
-                        <input type="search">
-                        <button type="submit">Search</button>
-                    </form>
-                </search>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="flexbox">
         <!--hobbies.html-->
-        <h1>Extracurriculars</h1>
-        <hr>
-        <dl>
-            <dt>
-                <b><i>CS Foreach - TritonHacks</i></b>
-            </dt>
-            <dd>Volunteered as a tutor to help participants code and debug</dd>
-            <br>
+        <section class="cell" id="header1">
+            <h1>Extracurriculars</h1>
+        </section>
 
-            <dt>
-                <b><i>Math Matters</i></b>
-            </dt>
-            <dd>Tutored kids K-10 in math subjects they needed help with</dd>
-            <br>
+            <dl>
+                <section class="cell" id="extra">
+                    <dt>
+                        <b><i>Math Matters</i></b>
+                    </dt>
+                    <dd>Tutored kids K-10 in math subjects they needed help with</dd>
+                </section>
 
-            <dt>
-                <b><i>SWELL (Students Who Engage, Learn, & Lead)</i></b>
-            </dt>
-            <dd>Connected with CSE peers and got involved in CSE activities/events throughout the year</dd>
-        </dl>
+                <section class="cell" id="extra">
+                    <dt>
+                        <b><i>SWELL (Students Who Engage, Learn, & Lead)</i></b>
+                    </dt>
+                    <dd>Connected with CSE peers and got involved in CSE activities/events throughout the year</dd>
+                </section>
+
+                <section class="cell" id="extra">
+                    <dt>
+                        <b><i>CS Foreach - TritonHacks</i></b>
+                    </dt>
+                    <dd>Volunteered as a tutor to help participants code and debug</dd>
+                </section>
+            </dl>
+        </section>
+
+        <section class="cell" id="images"> 
+            <picture>
+                <source media="(max-width: 480px)" srcset="images/tritonhacksS.JPG" width=100% height=auto>
+                <source media="(max-width:1024px)" srcset="images/tritonhacksM.JPG" width=100% height=auto>
+                <source media="(min-width:1025px)" srcset="images/tritonhacksM.JPG" width=100% height=auto>
+                <img src="images/tritonhacksM.JPG" alt="TritonHacks Group Photo">
+            </picture>
+        </section>
     </main>
 
     <footer>
-        <hr/>
         <address>
             <small>
-                Made by <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>.<br>
-                Located at UC San Diego
+                2025 <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>
             </small>
         </address>
     </footer>

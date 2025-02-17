@@ -2,69 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial scale 1.0">
     <title>My Portfolio</title>
     <link href="images/favicon.svg" rel="icon" />
-    <style>
-        body {
-            border-color: black;
-            border-style: solid;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
     <header>
-        <div id = "header nav">
+        <div id = "header-nav">
             <nav>
             <!--Navigation Bar-->
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
                 <a href="work.html">Work/Research</a>
                 <a href="extracurriculars.html">Extracurriculars</a>
                 <a href="contact.html">Contact</a>
-                <a href="experiments.html">Experiments</a>
-                <search>
-                    <form action="./search/">
-                        <input type="search">
-                        <button type="submit">Search</button>
-                    </form>
-                </search>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="flexbox">
         <!--contact.html-->
     
-        <h1>Contact and Links</h1>
-        <hr>
-        <h3>Email: <a href="mailto:niroopkris@gmail.com">niroopkris@gmail.com</a></h3>
-        <h3>Github:
-            <a href="https://github.com/niroopkris"> https://github.com/niroopkris</a>
-        </h3>
+        <section class="cell" id="header1">
+            <h1>Contact and Links</h1>
+         </section>
+         <section class="cell" id="mylinks">
+            <h4>Email: <a href="mailto:niroopkris@gmail.com">niroopkris@gmail.com</a></h3>
+            <h4>Github:
+                <a href="https://github.com/niroopkris"> https://github.com/niroopkris</a>
+            </h3>
+        </section>
 
-        <form action="#">
-            <fieldset>
-                <legend>Contact Directly</legend>
-                <label>First Name: </label> 
-                <input type="text" id="fstname" name="fstname"><br>
-                <label>Last Name: </label>
-                <input type="text" id="lstname" name="lstname"><br>
-                <label>Email: </label> 
-                <input type="text" id="email" name="email"><br>
-                <label>Number: </label> 
-                <input type="text" id="phone" name="phone"><br>
-                <input type="submit" value="Submit">
-            </fieldset>
-        </form>
+        <section class="cell" id="contactMe">
+            <form action="#">
+                <fieldset>
+                    <legend>Contact Directly</legend>
+                    <label>Name: </label> 
+                    <input type="text" id="fstname" name="fstname"><br>
+                    <label>Email: </label> 
+                    <input type="text" id="email" name="email"><br>
+                    <label>Message: </label> 
+                    <input type="text" id="phone" name="phone"><br>
+                    <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+        </section>
     </main>
 
     <footer>
-        <hr/>
         <address>
             <small>
-                Made by <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>.<br>
-                Located at UC San Diego
+                2025 <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>
             </small>
         </address>
     </footer>

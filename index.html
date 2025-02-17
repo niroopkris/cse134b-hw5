@@ -2,71 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial scale 1.0">
     <title>My Portfolio</title>
     <link href="images/favicon.svg" rel="icon" />
-    <style>
-        body {
-            border-color: black;
-            border-style: solid;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
     <header>
-        <div id = "header nav">
+        <div id = "header-nav">
             <nav>
             <!--Navigation Bar-->
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
                 <a href="work.html">Work/Research</a>
                 <a href="extracurriculars.html">Extracurriculars</a>
                 <a href="contact.html">Contact</a>
-                <a href="experiments.html">Experiments</a>
-                <search>
-                    <form action="./search/">
-                        <input type="search">
-                        <button type="submit">Search</button>
-                    </form>
-                </search>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class = "flexbox">
         <!--Home Page-->
-        <hgroup>
-            <h1>My Portfolio</h1>
-            <hr>
+        <section class="cell" id="header1">
+            <h1>Welcome!</h1>
+            <h2>I'm Niroop Krishnakumar, a CS student at UC San Diego. </h2>
+        </section>
 
-            <h2>Welcome! I'm Niroop Krishnakumar.</h2>
-            <h3>Student at UC San Diego</h3>
-        </hgroup>
-        
-        <picture>
-            <source media="(min-width:600px)" srcset="images/portrait.JPG">
-            <img src="images/portrait.JPG" alt="portrait">
-        </picture>
+        <section class="cell" id="profile1">
+            <picture>
+                <source media="(max-width: 480px)" srcset="images/profileS.jpg" width=100% height=auto>
+                <source media="(max-width:1024px)" srcset="images/profileM.JPG" width=100% height="600">
+                <source media="(min-width:1025px)" srcset="images/profileL.JPG" width=100% height="700">
+                <img src="images/profileM.JPG" alt="profile photo" width=100%>
+            </picture>
+        </section>
 
-        <section class="home nav">
-            <nav>
-            <!--Navigation Bar-->
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="work.html">Work/Research</a>
-                <a href="extracurriculars.html">Extracurriculars</a>
+
+        <!--Navigation Links-->
+        <section class="cell" id="homelink1">
+            <a href="work.html">Work/Research</a>
+        </section>
+
+        <section class="cell" id="homelink2">
+            <a href="extracurriculars.html">Extracurriculars</a>
+        </section>
+
+        <section class="cell" id="homelink3">
                 <a href="contact.html">Contact</a>
-                <a href="experiments.html">Experiments</a>
-            </nav>
         </section>
     </main>
 
     <footer>
-        <hr/>
         <address>
             <small>
-                Made by <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>.<br>
-                Located at UC San Diego
+                2025 <a href="mailto:niroopkris@gmail.com">Niroop Krishnakumar</a>.<br>
             </small>
         </address>
     </footer>

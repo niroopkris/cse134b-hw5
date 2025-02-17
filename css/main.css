@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Caudex';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/caudex-v17-latin-regular.woff2') format('woff2'); 
+}
+
+@font-face {
+    font-family: 'Caudex';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/caudex-v17-latin-italic.woff2') format('woff2'); 
+}
+
+@font-face {
+    font-family: 'Caudex';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/caudex-v17-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Caudex';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/caudex-v17-latin-700italic.woff2') format('woff2'); 
+}
+
+
+
+#header-nav {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    padding: 20px;
+    background-color: color-mix(in oklab, #1425a7 75%, white);
+
+    .navlink {
+        padding: 3px;
+    }
+
+    a {
+        padding: 20px;
+        text-decoration: none;
+    }
+
+    a:link, a:visited {
+        color: rgb(235, 209, 225);
+    }
+
+    a:hover, a:active {
+        color: rgb(255, 105, 170);
+    }
+}
+
+/*Scope doesn't seem to work on firefox (my browser), so i repeated the code within header/footer*/
+@scope (header, footer) {
+    a:link, a:visited {
+        color: rgb(235, 209, 225);
+    }
+
+    a:hover, a:actve {
+        color: rgb(255, 105, 170);
+    }
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Caudex', Courier, monospace;
+    border-color: black;
+    border-style: solid;
+    min-height: 100vh;
+
+    /*custom font wasn't showing any change in size when using h1 rather than h2, so I defined a size here*/
+    h1 {
+        font-family: 'Caudex', Courier, monospace; 
+        font-size: 2.0rem; 
+    }
+
+    /*h1 in home page wasn't being centered*/
+    #header1 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .flexbox {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+
+        .cell {
+            flex: 1;
+            flex-basis: 30%;
+            margin: 10px;   
+            
+            a {
+                padding: 1px 6px;
+                border: 1px outset buttonborder;
+                border-radius: 3px;
+                color: black;
+                background-color: rgb(253, 242, 249);
+                text-decoration: none;
+            }
+
+            a:hover {
+                background-color: rgb(255, 243, 221);
+                padding: 4px 5px;
+                border: 2px outset buttonborder;
+                border-radius: 3px;
+            }
+        }
+
+        #homelink1:hover {
+            animation: shake 0.4s ease-in-out infinite;
+        }
+
+        #homelink2:hover {
+            animation: shake 0.4s ease-in-out infinite;
+        }
+
+        #homelink3:hover {
+            animation: shake 0.4s ease-in-out infinite;
+        }
+
+        #extra {
+            padding: 10px;
+        }
+    }
+}
+
+
+footer {
+    background-color: color-mix(in oklab, #1425a7 75%, white);
+    color: white;
+    text-align: center;
+    padding: 5px;
+
+
+    a:link, a:visited {
+        color: rgb(235, 209, 225);
+    }
+
+    a:hover, a:active {
+        color: rgb(255, 105, 170);
+    }
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+}
