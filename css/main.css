@@ -153,7 +153,31 @@ body {
                 font-size: 1.3em;
             }
             
-            textarea, input {
+            input:user-invalid {
+                border: 3px solid red;
+            }
+
+            input:user-invalid + p#comment_invalid::before {
+                content: "Improperly filled entry!";
+            }
+            input:user-invalid ~ p#comment_info::before {
+                content: "Please enter a comment with at-least 50 characters!";
+            }
+            input:user-invalid + p#email_invalid::before {
+                content: "Invalid email address!";
+            }
+            input:user-invalid ~ p#email_info::before {
+                content: "Please use a valid format, ex: email@example.com";
+            }
+            input:user-invalid + p#name_invalid::before {
+                content: "Invalid name format!";
+            }
+            input:user-invalid ~ p#name_info::before {
+                content: "Please provide your real name (using letters)!";
+            }
+
+
+            input {
                 display: block;
                 width: 300px;
             }

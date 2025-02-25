@@ -15,7 +15,7 @@
                 <a href="index.html">Home</a>
                 <a href="work.html">Work/Research</a>
                 <a href="extracurriculars.html">Extracurriculars</a>
-                <a href="contact.html">Contact</a>
+                <a href="form-no-js.html">Form-No-JS</a>
             </nav>
         </div>
     </header>
@@ -31,20 +31,21 @@
             <h2>Contact Me!</h2>
             <form action="https://httpbin.org/post" method="POST">
                     <input type="hidden" name="possible_bot" value="true">
-                    <label for="name">Name: 
-                        <input type="text" name="name">
-                        <p class="validation">Invalid name!</p>
-                        <p class="info">Please provide your real name (using letters)!</p>
+                    <label for="name">Name * 
+                        <input type="text" name="name" required pattern="^[\w\s]*">
+                        <p class="validation" id="name_invalid"></p>
+                        <p class="info" id="name_info"></p>
                     </label> 
-                    <label for="email">Email: 
-                        <input type="email" name="email">
-                        <p class="validation">Invalid email address! </p>
-                        <p class="info">Please use a valid format, ex: email@example.com</p>
+                    <label for="email">Email *
+                        <input type="email" name="email" required >
+                        <p class="validation" id="email_invalid"></p>
+                        <p class="info" id="email_info"></p>
                     </label> 
-                    <label for="comments">Comments: 
-                        <textarea type="text" name="comments"></textarea>
-                        <p class="validation">Unfilled entry!</p>
-                        <p class="info">Please enter at-least one word!</p>
+                    <label for="comments">Comments *
+                        <!--Changing from textarea to input for now because textarea does not support pattern matching!-->
+                        <input type="text" name="comments" minlength="50" required pattern="^[\w\p\s]*">
+                        <p class="validation" id="comment_invalid"></p>
+                        <p class="info" id="comment_info"></p>
                     </label> 
                     <button>Submit</button>
             </form>
