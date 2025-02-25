@@ -65,6 +65,12 @@
     }
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 body {
     overflow-x: hidden;
     font-family: 'Caudex', Courier, monospace;
@@ -88,12 +94,12 @@ body {
         justify-content: center;
     }
 
-
     .flexbox {
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
+        flex-grow: 1;
         padding: 0;
         margin: 0;
 
@@ -134,11 +140,55 @@ body {
         #extra {
             padding: 10px;
         }
+
+        #contactMe {
+            border: solid;
+            padding: 20px;
+            font-size: 112.5%;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 21em;
+
+            label {
+                font-size: 1.3em;
+            }
+            
+            textarea, input {
+                display: block;
+                width: 300px;
+            }
+
+            .validation {
+                color: red;
+                display: block;
+                font-size: 0.7em;
+                margin:auto;
+                padding-top: 0.5em;
+            }
+
+            .info {
+                color: rgb(105, 6, 75);
+                display: block;
+                font-size: 0.7em;
+                margin:auto;
+                padding-top: 0.5em;
+                margin-bottom: 20px;
+
+            }
+        }
+
     }
 }
 
 
+
+.required:after {
+    content:" *";
+    color: red;
+}
+
 footer {
+    margin-top: auto;
     background-color: color-mix(in oklab, #1425a7 75%, white);
     color: white;
     text-align: center;
