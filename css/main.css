@@ -142,6 +142,7 @@ body {
         }
 
         #contactMe {
+            
             border: solid;
             padding: 20px;
             font-size: 112.5%;
@@ -157,48 +158,33 @@ body {
                 border: 3px solid red;
             }
 
-            input:user-invalid + p#comment_invalid::before {
-                content: "Improperly filled entry!";
+            input:user-invalid ~ output#error_msg::before {
+                content: "Invalid field!";
             }
-            input:user-invalid ~ p#comment_info::before {
-                content: "Please enter a comment with at-least 50 characters!";
-            }
-            input:user-invalid + p#email_invalid::before {
-                content: "Invalid email address!";
-            }
-            input:user-invalid ~ p#email_info::before {
-                content: "Please use a valid format, ex: email@example.com";
-            }
-            input:user-invalid + p#name_invalid::before {
-                content: "Invalid name format!";
-            }
-            input:user-invalid ~ p#name_info::before {
-                content: "Please provide your real name (using letters)!";
+
+            input:user-invalid ~ output#info_msg::before {
+                content: "Please fix the following: []";
             }
 
 
             input {
                 display: block;
                 width: 300px;
+                margin-bottom: 20px;
             }
 
-            .validation {
+            output {
                 color: red;
                 display: block;
-                font-size: 0.7em;
-                margin:auto;
+                font-size: 0.8em;
+                margin: auto;
                 padding-top: 0.5em;
             }
 
-            .info {
-                color: rgb(105, 6, 75);
-                display: block;
-                font-size: 0.7em;
-                margin:auto;
-                padding-top: 0.5em;
-                margin-bottom: 20px;
-
+            button {
+                margin-top: 15px;
             }
+
         }
 
     }

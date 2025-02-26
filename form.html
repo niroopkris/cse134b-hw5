@@ -31,14 +31,24 @@
             <h2>Contact Me!</h2>
             <form action="https://httpbin.org/post" method="POST">
                     <input type="hidden" name="possible_bot" value="true">
-                    <label for="name">Name * </label> 
-                    <input type="text" name="name" required pattern="^[\w\s]*">
-
-                    <label for="email">Email * </label> 
-                    <input type="email" name="email" required >
-
-                    <label for="comments">Comments * </label> 
-                    <input type="text" name="comments" minlength="30" required pattern="^[\w\p\s]*">
+                    <label for="name">Name * 
+                        <input type="text" name="name" required pattern="^[\w\s]*">
+                        <!-- 
+                        <output class="validation" id="name_invalid"></output>
+                        <output class="info" id="name_info"></output>
+                        -->
+                    </label> 
+                    <label for="email">Email *
+                        <input type="email" name="email" required >
+                        <!--
+                        <output class="validation" id="email_invalid"></output>
+                        <output class="info" id="email_info"></output>
+                        -->
+                    </label> 
+                    <label for="comments">Comments *
+                        <!--Changing from textarea to input for now because textarea does not support pattern matching!-->
+                        <input type="text" name="comments" minlength="30" required pattern="^[\w\p\s]*">
+                    </label> 
                     <!--only need 1 error/info msg it seems. thus need a way to determine which field causes the error-->
                     <output for="name email comments" name="error" id="error_msg"></output>
                     <output for="name email comments" name="info" id="info_msg"></output>
