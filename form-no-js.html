@@ -6,6 +6,23 @@
     <title>My Portfolio</title>
     <link href="images/favicon.svg" rel="icon" />
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <style>
+        input:user-invalid ~ output#error_msg0::before {
+            content: "Error: Invalid field!";
+        }
+
+        input:user-invalid ~ output#info_msg0::before {
+            content: "Info: Please fix the following: []";
+        }
+
+        textarea:user-invalid ~ output#error_msg0::before {
+            content: "Error: Invalid field!";
+        }
+
+        textarea:user-invalid ~ output#info_msg0::before {
+            content: "Info: Please fix the following: []";
+        }
+    </style>
 </head>
 <body class = "container">
     <header>
@@ -16,6 +33,7 @@
                 <a href="work.html">Work/Research</a>
                 <a href="extracurriculars.html">Extracurriculars</a>
                 <a href="form-no-js.html">Form-No-JS</a>
+                <a href="form.html">Contact Form</a>
             </nav>
         </div>
     </header>
@@ -32,16 +50,16 @@
             <form action="https://httpbin.org/post" method="POST">
                     <input type="hidden" name="possible_bot" value="true">
                     <label for="name">Name * </label> 
-                    <input type="text" name="name" required pattern="^[\w\s]*">
+                    <input type="text" name="name" id="name" required pattern="^[\w_.\s]*">
 
                     <label for="email">Email * </label> 
-                    <input type="email" name="email" required >
+                    <input type="email" name="email" id="email" required pattern="^[\w!#$%&'*+-/=?^_`{|}~]*">
 
                     <label for="comments">Comments * </label> 
-                    <input type="text" name="comments" minlength="30" required pattern="^[\w\p\s]*">
+                    <textarea type="text" name="comments" id="comments" maxlength="300" required></textarea>
                     <!--only need 1 error/info msg it seems. thus need a way to determine which field causes the error-->
-                    <output for="name email comments" name="error" id="error_msg"></output>
-                    <output for="name email comments" name="info" id="info_msg"></output>
+                    <output for="name email comments" name="error" id="error_msg0"></output>
+                    <output for="name email comments" name="info" id="info_msg0"></output>
                     <button>Submit</button>
             </form>
         </section>

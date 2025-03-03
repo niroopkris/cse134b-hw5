@@ -54,7 +54,6 @@
     }
 }
 
-/*Scope doesn't seem to work on firefox (my browser), so i repeated the code within header/footer*/
 @scope (header, footer) {
     a:link, a:visited {
         color: rgb(235, 209, 225);
@@ -78,13 +77,11 @@ body {
     border-style: solid;
     min-height: 100vh;
 
-    /*custom font wasn't showing any change in size when using h1 rather than h2, so I defined a size here*/
     h1 {
         font-family: 'Caudex', Courier, monospace; 
         font-size: 2.0rem; 
     }
 
-    /*h1 in home page wasn't being centered*/
     #header1 {
         display: flex;
         flex-wrap: wrap;
@@ -156,17 +153,31 @@ body {
             
             input:user-invalid {
                 border: 3px solid red;
+
+            }
+    
+            textarea:user-invalid {
+                border: 3px solid red;
             }
 
-            input:user-invalid ~ output#error_msg::before {
-                content: "Error: Invalid field!";
+            #error_msg {
+                color: red;
             }
 
-            input:user-invalid ~ output#info_msg::before {
-                content: "Info: Please fix the following: []";
+            .error {
+                color: purple;
+                display: block;
+                font-size: 0.8em;
+                margin: auto;
+                padding-top: 0.5em;
             }
 
+            .error.charlimit {
+                color: rgb(248, 0, 74);
+                font-weight: bold;
+            }
 
+    
             input {
                 display: block;
                 width: 300px;
@@ -177,14 +188,6 @@ body {
                 display: block;
                 width: 300px;
                 margin-bottom: 20px;
-            }
-
-            output {
-                color: red;
-                display: block;
-                font-size: 0.8em;
-                margin: auto;
-                padding-top: 0.5em;
             }
 
             button {
