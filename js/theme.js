@@ -1,28 +1,22 @@
-const themeButton = document.querySelector("[data-theme-toggle]");
+document.addEventListener("DOMContentLoaded", function() {
+   const themeButton = document.querySelector("[data-theme-toggle]");
 
-const localStorageTheme = localStorage.getItem("theme");
+    const localStorageTheme = localStorage.getItem("theme");
 
-let curTheme = localStorageTheme;
 
-if (localStorageTheme !== null) {
-    let curTheme = localStorageTheme;
-    }
-else {
-    let curTheme = "light";
-}
+    let curTheme = localStorageTheme || "light";
 
-document.querySelector("html").setAttribute("data-theme", curTheme);
+    document.querySelector("html").setAttribute("data-theme", curTheme);
+        
+    themeButton.addEventListener("click", (event) => {
+        if (curTheme === "light") {
+            curTheme = "dark";
+        }
+        else {
+            curTheme = "light";
+        }
     
-themeButton.addEventListener("click", (event) => {
-    if (curTheme == "dark") {
-        const newTheme = "light";
-    }
-    else {
-        const newTheme = "dark";
-    }
-  
-    localStorage.setItem("theme", newTheme);
-    document.querySelector("html").setAttribute("data-theme", newTheme);
-
-    curTheme = newTheme;
-}); 
+        localStorage.setItem("theme", curTheme);
+        document.querySelector("html").setAttribute("data-theme", curTheme);
+    }); 
+});
