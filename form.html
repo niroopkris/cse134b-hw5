@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale 1.0">
     <title>My Portfolio</title>
     <link href="images/favicon.svg" rel="icon" />
     <link rel="stylesheet" href="css/main.css" type="text/css">
-
+    <script src="js/theme.js"></script>
 </head>
 <body class = "container">
     <header>
@@ -19,6 +19,7 @@
                 <a href="form-no-js.html">Form-No-JS</a>
                 <a href="form.html">Contact Form</a>
             </nav>
+            <button type="button" aria-label="Change Theme" data-theme-toggle>Change Theme</button>
         </div>
     </header>
 
@@ -38,7 +39,7 @@
                     <input type="text" name="name" id="nameField" required pattern="^[\w_.\s]*">
 
                     <label for="email">Email * </label> 
-                    <input type="email" name="email" id="email" required pattern="^[\w_!#$%&*+=?^`~]*">
+                    <input type="email" name="email" id="email" required pattern="^[\w_!#$%&*+=?^`~@.]*">
 
                     <label for="comments">Comments * </label> 
                     <textarea type="text" name="comments" id="comments" maxlength="300" required></textarea>

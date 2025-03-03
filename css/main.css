@@ -27,7 +27,15 @@
     src: url('../fonts/caudex-v17-latin-700italic.woff2') format('woff2'); 
 }
 
+[data-theme="light"] {
+    --bgcolor:rgb(255, 255, 255);
+    --fgcolor: rgb(0,0,0);
+}
 
+[data-theme="dark"]{ 
+    --bgcolor: rgb(0,0,0);
+    --fgcolor:rgb(255, 255, 255);
+}
 
 #header-nav {
     display:flex;
@@ -52,6 +60,7 @@
     a:hover, a:active {
         color: rgb(255, 105, 170);
     }
+
 }
 
 @scope (header, footer) {
@@ -71,9 +80,12 @@
 }
 
 body {
+    background-color: var(--bgcolor);
+    color: var(--fgcolor);
+
     overflow-x: hidden;
     font-family: 'Caudex', Courier, monospace;
-    border-color: black;
+    border-color: var(--fgcolor);
     border-style: solid;
     min-height: 100vh;
 
@@ -106,7 +118,7 @@ body {
             margin: 10px;   
             
             a {
-                padding: 1px 6px;
+                margin: 1px 6px;
                 border: 1px outset buttonborder;
                 border-radius: 3px;
                 color: black;
