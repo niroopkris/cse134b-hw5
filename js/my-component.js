@@ -20,34 +20,41 @@ class MyProject extends HTMLElement {
 
         console.log(projName)
         // Template for component content
-        //TODO 1: set up the innerHTML of the component as follows:
-        // <div class="simple-card">
+        //TODO 1: set up the innerHTML of the component <project-card> as follows:
+        // <project-card proj-name="{_}" desc="{_}" a-link="{_}" image-url="{_}">
+        //      <style>
+        //             { contents imported from getMyComponentCSS() }
+        //      </style>
+        //      <div class="simple-card">
         //         <hgroup>
-        //         <h2 class="proj-name">${projName}</h2>
-        //         <p class="desc">${desc}</p>
-        //         <a class="desc" href=${aLink}>Further Reading</a>
+        //              <h2 class="proj-name">${projName}</h2>
+        //              <p class="desc">${desc}</p>
+        //              <a class="desc" href=${aLink}>Further Reading</a>
         //         </hgroup>
-        //         <img src="${imageUrl}" alt="${projName} Website">
+        //         <picture>
+        //              <img src="${imageUrl}" alt="${projName} Website Img">
+        //         </picture>
         //     </div>
+        // </project-card>
         // also have somewhere to append style to
 
         let myDiv = document.createElement('div');
-        myDiv.classList.add("project-card");
-        //myDiv.innerHTML = '<hgroup> <h2 class="projName">${projName}</h2> <p class="desc">${desc}</p> <a class="desc" href=${aLink}>Further Reading</a> </hgroup> <img src="${imageUrl}" alt="${projName} Website">'; 
+        myDiv.classList.add("simple-card");
         myDiv.innerHTML = `
         <hgroup>
             <h2 class="proj-name">${projName}</h2> 
             <p class="desc">${desc}</p> 
             <a class="desc" href="${aLink}" target="_blank">Github</a> 
         </hgroup> 
-        <img src="${imageUrl}" alt="${projName} Website">
+        <picture>
+            <img src="${imageUrl}" alt="${projName} Website Img">
+        </picture>
         `;
-
         this.appendChild(style);
         this.appendChild(myDiv);
 
         //TODO 2: Uncomment this once you have the HTML set up
-        this.querySelector('.project-card').addEventListener('click', () => this.doSomething());
+        this.querySelector('.simple-card').addEventListener('click', () => this.doSomething());
 
     }
     doSomething() {
@@ -64,4 +71,4 @@ class MyProject extends HTMLElement {
 
 // Define the custom element
 console.log("custom element defined");
-customElements.define('my-project', MyProject);
+customElements.define('project-card', MyProject);
