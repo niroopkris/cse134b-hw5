@@ -29,7 +29,7 @@ class MyProject extends HTMLElement {
         //         <hgroup>
         //              <h2 class="proj-name">${projName}</h2>
         //              <p class="desc">${desc}</p>
-        //              <a class="desc" href=${aLink}>Further Reading</a>
+        //              <a class="desc" href=${aLink} target="_blank">Github Project</a>
         //         </hgroup>
         //         <picture>
         //              <img src="${imageUrl}" alt="${projName} Website Img">
@@ -44,7 +44,7 @@ class MyProject extends HTMLElement {
         <hgroup>
             <h2 class="proj-name">${projName}</h2> 
             <p class="desc">${desc}</p> 
-            <a class="desc" href="${aLink}" target="_blank">Github</a> 
+            <a class="desc" href="${aLink}" target="_blank">Github Project</a> 
         </hgroup> 
         <picture>
             <img src="${imageUrl}" alt="${projName} Website Img">

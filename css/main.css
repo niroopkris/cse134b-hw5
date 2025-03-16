@@ -27,6 +27,14 @@
     src: url('../fonts/caudex-v17-latin-700italic.woff2') format('woff2'); 
 }
 
+
+@media screen and (max-width: 480px) {
+    .flexbox.cell {
+        margin: 0;
+        padding: 0;
+    }
+} 
+
 [data-theme="light"] {
     --bgcolor:rgb(255, 255, 255);
     --fgcolor: rgb(0,0,0);
