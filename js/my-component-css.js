@@ -2,8 +2,8 @@
 export function getMyComponentCSS() {
     return `
                 .project-card {
-                    background: white;
-                    border-radius: 10px;
+                    background: rgb(240, 243, 255);
+                    border-radius: 5px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                     overflow: hidden;
                     max-width: 300px;

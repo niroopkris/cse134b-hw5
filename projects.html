@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
         body {
             margin: 0;
             padding: 20px;
-            background-color: #f5f5f5;
             text-align: center;
         }
 
@@ -55,73 +53,85 @@
             <button type="button" aria-label="Change Theme" data-theme-toggle>Change Theme</button>
         </div>
     </header>
+    <main class = "flexbox">
+        <!-- No need to touch this -->
+        <hgroup class="cell">
+            <h1>RSRI Projects</h1>
+            <p>Made using the Rust language by me (nk4444 on github) and Nikhil (Nakiti) when working under Professor Jhala. Main focus was backend, so the frontend is rough!</p>
+        </hgroup>
 
-    <!-- No need to touch this -->
-    <hgroup>
-        <h1>RSRI Projects</h1>
-        <p>Demos made by me (nk4444 on github), Nikhil (Nakiti), and Professor Jhala. In-progress, so very rough frontend!</p>
-    </hgroup>
+        <div id="gallery" class="cell">
+            <!-- Note the gallery is empty. We will be filling this in. -->
+        </div>
 
-    <div id="gallery">
-        <!-- Note the gallery is empty. We will be filling this in. -->
-    </div>
+        <!--Buttons -->
+        <section class="cell" id="project-buttons">
+            <button type="button" data-load-local>Load Local</button>
 
-    <!-- No need to touch this -->
-    <script type="module" src="./my-component.js"></script>
+            <button type="button" data-load-remote>Load Remote</button>
+        </section>
 
-    <!-- Code for DomContentLoaded and custom event listener -->
-    <script>
-        window.addEventListener('DOMContentLoaded', async () => {
-            console.log("DOM Content loaded");
-            //LAST TODO - WE NEED TO CREATE OUR OWN API JSONBIN WITH OUR PROJECT DATA!
-            const url = "https://api.jsonbin.io/v3/b/67ccbf0ead19ca34f818d739";
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`Response status: ${response.status}`);
+        <!-- No need to touch this -->
+        <script type="module" src="js/my-component.js"></script>
+
+        <!-- Code for DomContentLoaded and custom event listener -->
+        <script>
+            document.querySelector("[data-load-remote]").addEventListener('click', async () => {
+                console.log("DOM Content loaded");
+
+                //clear innerhtml so that we dont add duplicates
+                let gallery = document.getElementById("gallery");
+                gallery.innerHTML = ""
+
+                //LAST TODO - WE NEED TO CREATE OUR OWN API JSONBIN WITH OUR PROJECT DATA!
+                const url = "https://api.jsonbin.io/v3/b/67d64e5f8561e97a50ecda76";
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
+                    }
+
+                    const jsonData = await response.json();
+                    jsonData.record.forEach(project => {
+                        console.log(project);
+                        // Example of expected result:
+                        // {
+                        // image_url:
+                        // "working_url_here"
+                        // make:
+                        // "Suzuki"
+                        // model:
+                        // "Wagon R"
+                        // year:
+                        // 1998
+                        //}
+
+
+                        window.galleryItem = document.createElement("my-project");
+                        // TODO 5: Set attributes of my-ride as follows:
+                        // <!-- <my-ride year="1998" make="Suzuki" model="Wagon R"
+                        //     image-url="https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4746.jpg"></my-ride> -->
+                        // using the properties in the "car" obj.
+                        // setAttribute() will do the trick.
+                        window.galleryItem.setAttribute('proj-name', project.proj_name);
+                        window.galleryItem.setAttribute('desc', project.desc);
+                        window.galleryItem.setAttribute('a-link', project.a_link);
+                        window.galleryItem.setAttribute('image-url', project.image_url);
+                        document.getElementById("gallery").appendChild(window.galleryItem);
+                    });
+
+                } catch (error) {
+                    console.error(error.message);
                 }
+            });
 
-                const jsonData = await response.json();
-                jsonData.record.forEach(project => {
-                    console.log(project);
-                    // Example of expected result:
-                    // {
-                    // image_url:
-                    // "working_url_here"
-                    // make:
-                    // "Suzuki"
-                    // model:
-                    // "Wagon R"
-                    // year:
-                    // 1998
-                    //}
-
-
-                    window.galleryItem = document.createElement("my-project");
-                    // TODO 5: Set attributes of my-ride as follows:
-                    // <!-- <my-ride year="1998" make="Suzuki" model="Wagon R"
-                    //     image-url="https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4746.jpg"></my-ride> -->
-                    // using the properties in the "car" obj.
-                    // setAttribute() will do the trick.
-                    window.galleryItem.setAttribute('proj-name', car.proj_Name);
-                    window.galleryItem.setAttribute('desc', car.desc);
-                    window.galleryItem.setAttribute('a-link', car.a_link);
-                    window.galleryItem.setAttribute('image-url', car.image_url);
-                    document.getElementById("gallery").appendChild(window.galleryItem);
-                });
-
-            } catch (error) {
-                console.error(error.message);
-            }
-        });
-
-        // TODO 7: Figure out what the blank should be in accordance with the notion of event delegation
-        document.body.addEventListener('do-something', (event) => {
-            let target = event.target;
-            target.style.border = target.style.border == "" ? "5px solid black" : "";
-        });
-    </script>
-
+            // TODO 7: Figure out what the blank should be in accordance with the notion of event delegation
+            document.getElementById("gallery").addEventListener('do-something', (event) => {
+                let target = event.target;
+                target.style.border = target.style.border == "" ? "5px solid black" : "";
+            });
+        </script>
+    </main>
 </body>
 
 </html>

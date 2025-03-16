@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-   const themeButton = document.querySelector("[data-theme-toggle]");
+    const themeButton = document.querySelector("[data-theme-toggle]");
 
     const localStorageTheme = localStorage.getItem("theme");
 
