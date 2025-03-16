@@ -45,10 +45,11 @@
     --fgcolor:rgb(255, 255, 255);
 }
 
-#header-nav {
+.header-nav {
     display:flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
+    flex-flow: row;
+    justify-content:flex-end;
+    align-items: center;
     padding: 20px;
     background-color: color-mix(in oklab, #1425a7 75%, white);
 
@@ -57,7 +58,7 @@
     }
 
     a {
-        padding: 20px;
+        padding: 5px;
         text-decoration: none;
     }
 
@@ -69,6 +70,9 @@
         color: rgb(255, 105, 170);
     }
 
+    .theme-button {
+        margin-left: 10px;
+    }
 }
 
 @scope (header, footer) {
