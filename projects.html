@@ -6,7 +6,7 @@
     <title>Custom Component Demo</title>
     <link href="images/favicon.svg" rel="icon" />
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <script src="js/theme.js"></script>
+    <script src="js/on-load.js"></script>
     <style>
         body {
             margin: 0;
@@ -76,14 +76,33 @@
 
         <!-- Code for DomContentLoaded and custom event listener -->
         <script>
-            document.querySelector("[data-load-remote]").addEventListener('click', async () => {
-                console.log("DOM Content loaded");
-
+            document.querySelector("[data-load-local]").addEventListener('click', async () => {
                 //clear innerhtml so that we dont add duplicates
                 let gallery = document.getElementById("gallery");
-                gallery.innerHTML = ""
+                gallery.innerHTML = "";
 
-                //LAST TODO - WE NEED TO CREATE OUR OWN API JSONBIN WITH OUR PROJECT DATA!
+                const jsonData0 = JSON.parse(localStorage.getItem("projects"));
+                jsonData0.forEach(project => {
+                        console.log(project);
+
+                        window.galleryItem = document.createElement("my-project");
+                        // TODO 5: Set attributes of my-ride as follows:
+                        // <!-- <my-ride year="1998" make="Suzuki" model="Wagon R"
+                        //     image-url="https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4746.jpg"></my-ride> -->
+                        // using the properties in the "car" obj.
+                        window.galleryItem.setAttribute('proj-name', project.proj_name);
+                        window.galleryItem.setAttribute('desc', project.desc);
+                        window.galleryItem.setAttribute('a-link', project.a_link);
+                        window.galleryItem.setAttribute('image-url', project.image_url);
+                        document.getElementById("gallery").appendChild(window.galleryItem);
+                });
+            });
+
+            document.querySelector("[data-load-remote]").addEventListener('click', async () => {
+                //clear innerhtml so that we dont add duplicates
+                let gallery = document.getElementById("gallery");
+                gallery.innerHTML = "";
+
                 const url = "https://api.jsonbin.io/v3/b/67d64e5f8561e97a50ecda76";
                 try {
                     const response = await fetch(url);
@@ -94,25 +113,12 @@
                     const jsonData = await response.json();
                     jsonData.record.forEach(project => {
                         console.log(project);
-                        // Example of expected result:
-                        // {
-                        // image_url:
-                        // "working_url_here"
-                        // make:
-                        // "Suzuki"
-                        // model:
-                        // "Wagon R"
-                        // year:
-                        // 1998
-                        //}
-
 
                         window.galleryItem = document.createElement("my-project");
                         // TODO 5: Set attributes of my-ride as follows:
                         // <!-- <my-ride year="1998" make="Suzuki" model="Wagon R"
                         //     image-url="https://pub-940f423c24074b9ebe0052cc5f384faa.r2.dev/IMG_4746.jpg"></my-ride> -->
                         // using the properties in the "car" obj.
-                        // setAttribute() will do the trick.
                         window.galleryItem.setAttribute('proj-name', project.proj_name);
                         window.galleryItem.setAttribute('desc', project.desc);
                         window.galleryItem.setAttribute('a-link', project.a_link);

@@ -23,6 +23,7 @@ export function getMyComponentCSS() {
                 }
 
                 hgroup .proj-name {
+                    color: black;
                     font-size: 1.2rem;
                     margin: 10px;
                 }
