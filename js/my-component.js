@@ -33,7 +33,7 @@ class MyProject extends HTMLElement {
         //              <a class="desc" href=${aLink} target="_blank">Github Project</a>
         //         </hgroup>
         //         <picture>
-        //                 <source media="(max-width:1024px)" srcset="${imageBackup}">
+        //              <source media="(max-width:1024px)" srcset="${imageBackup}">
         //              <img src="${imageUrl}" alt="${projName} Website Img">
         //         </picture>
         //     </div>
