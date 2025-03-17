@@ -20,35 +20,38 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("html").setAttribute("data-theme", curTheme);
     }); 
 
-    const projectsJSON = [
+    let projectsJSON = [
         {
             "proj_name": "Wishlist",
             "desc": "A basic wishlist (in-progress)",
             "a_link": "https://github.com/niroopkris/rsri-wishlist",
-            "image_url": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/wishlist.png"
+            "image_url": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/wishlist.png",
+            "image_backup": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/wishlist-S.png"
         },
         {
             "proj_name": "Course",
             "desc": "General application that teachers and their students can use for their course",
             "a_link": "https://github.com/Nakiti/rsri_projects/tree/master/course",
-            "image_url": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/course.png"
+            "image_url": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/course.png",
+            "image_backup": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/course-S.png"
         },
         {
             "proj_name": "Conf",
             "desc": "An application for creating and viewing research papers",
             "a_link": "https://github.com/Nakiti/rsri_projects/tree/master/conf",
-            "image_url": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/conf.png"
+            "image_url": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/conf.png",
+            "image_backup": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/conf-S.png"
         },
         {
             "proj_name": "Voltron",
             "desc": "Groups students up and allows them to share their code in a buffer. Below image is the eventual look",
             "a_link": "https://github.com/Nakiti/rsri_projects/tree/master/voltron",
-            "image_url": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/voltron%20demo.png"
+            "image_url": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/voltron%20demo.png",
+            "image_backup": "https://pub-b6887010ee1f40558327c353f7d0f5b4.r2.dev/voltron-demo-S.png"
         }
     ];
 
-    if (!localStorage.getItem("projects")) {
-        localStorage.setItem("projects", JSON.stringify(projectsJSON));
-    }
+    localStorage.setItem("projects", JSON.stringify(projectsJSON));
+
 
 });

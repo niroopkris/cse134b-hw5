@@ -17,6 +17,7 @@ class MyProject extends HTMLElement {
         const desc = this.getAttribute('desc') || 'Unknown Description';
         const aLink = this.getAttribute('a-link') || 'Unknown Link';
         const imageUrl = this.getAttribute('image-url') || '';
+        const imageBackup = this.getAttribute('image-backup') || '';    //note by backup i actually mean its the smaller version
 
         console.log(projName)
         // Template for component content
@@ -32,6 +33,7 @@ class MyProject extends HTMLElement {
         //              <a class="desc" href=${aLink} target="_blank">Github Project</a>
         //         </hgroup>
         //         <picture>
+        //                 <source media="(max-width:1024px)" srcset="${imageBackup}">
         //              <img src="${imageUrl}" alt="${projName} Website Img">
         //         </picture>
         //     </div>
@@ -47,6 +49,7 @@ class MyProject extends HTMLElement {
             <a class="desc" href="${aLink}" target="_blank">Github Project</a> 
         </hgroup> 
         <picture>
+            <source media="(max-width:1024px)" srcset="${imageBackup}">
             <img src="${imageUrl}" alt="${projName} Website Img">
         </picture>
         `;
